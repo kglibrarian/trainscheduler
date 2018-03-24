@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="./assets/javascript/main.js"></script>
@@ -20,7 +21,7 @@
     <div class="card">
         <div class="card-header">Current Train Schedule</div>
             <div class="card-body">
-                    <table class="table">
+                    <table class="table ">
                             <thead>
                               <tr>
                                 <th scope="col">Train Name</th>
@@ -30,9 +31,9 @@
                                 <th scope="col">Minutes Away</th>
                               </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="tbody">
                               <tr>
-                                <th scope="train-name">Texas Eagle</th>
+                                <td scope="train-name">Texas Eagle</td>
                                 <td>New Orleans</td>
                                 <td>45</td>
                                 <td>20</td>
@@ -48,17 +49,25 @@
                 <form>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                                <label for="search js-search-term"class="search">Train Name:</label>
-                                <input type="text" class="form-control js-search-term " placeholder="Texas Eagle">
-                                <label for="search js-search-term"class="search">Destination</label>
-                                <input type="text" class="form-control js-search-term " placeholder="Denver, Colorado">
-                                <label for="search js-search-term"class="search">First Train Time (hh:mm)</label>
-                                <input type="text" class="form-control js-search-term " placeholder="11:30">
-                                <label for="search js-search-term"class="search">Frequency (min)</label>
-                                <input type="text" class="form-control js-search-term " placeholder="60">
-                                <input type="submit" class="btn js-search btn-primary my-2" id="js-search">
                                 
-                                <div class="js-gify-button"> </div>
+                                <label for="search"class="search">Train Name:</label>
+                                <input type="text" class="form-control js-train-name " placeholder="Texas Eagle">
+                                
+                                <label for="search" class="search">Destination</label>
+                                <input type="text" class="form-control js-train-destination " placeholder="Denver, Colorado">
+                                
+                                <label for="search" class="search">First Train Time (hh:mm)</label>
+                                <input type="text" class="form-control js-train-time " placeholder="11:30">
+                                
+                                <label for="search" class="search">Frequency (min)</label>
+                                <input type="text" class="form-control js-train-frequency " placeholder="60">
+
+                                <label for="search" class="search">Minutes Away (min)</label>
+                                <input type="text" class="form-control js-train-minutes " placeholder="10">
+                                
+                                <input type="submit" class="btn js-submit-button btn-primary my-2" id="js-search">
+                                
+                                <div class="js-submit-button"> </div>
                         </div>
                     </div>
                 </form> 
